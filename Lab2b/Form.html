@@ -1,0 +1,87 @@
+<html>
+    <head></head>
+    <body>
+        <form>
+            <fieldset>
+                <table border="1" width="80%" cellspacing="0" cellpadding="10">
+                    <tr>
+                        <th colspan="3">PERSON PROFILE</th>
+                    </tr>
+                    <tr>
+                        <td>Name</td>
+                        <td><input type="text" name="name"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Email</td>
+                        <td><input type="email" name="email"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Gender</td>
+                        <td>
+                            <input type="radio" name="gender" value="male"> Male
+                            <input type="radio" name="gender" value="female"> Female
+                            <input type="radio" name="gender" value="other"> Other
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Date of Birth</td>
+                        <td>
+                            <input type="number" name="dd"> / <input type="number" name="mm"> / <input type="number" name="yyyy"> <i>(dd/mm/yyyy)</i>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Blood Group</td>
+                        <td>
+                            <select name="blood_group">
+                                <option value="a+">A+</option>
+                                <option value="a-">A-</option>
+                                <option value="b+">B+</option>
+                                <option value="b-">B-</option>
+                                <option value="o+">O+</option>
+                                <option value="o-">O-</option>
+                                <option value="ab+">AB+</option>
+                                <option value="ab-">AB-</option>
+                            </select>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Degree
+                        </td>
+                        <td>
+                            <input type="checkbox" id="SSC" name="degree" value="SSC">
+                            <label for="SSC">SSC</label>
+                            <input type="checkbox" id="HSC" name="degree" value="HSC">
+                            <label for="HSC">HSC</label>
+                            <input type="checkbox" id="BSc." name="degree" value="BSc.">
+                            <label for="BSc.">BSc.</label>
+                            <input type="checkbox" id="MSc." name="degree" value="MSc.">
+                            <label for="MSc.">MSc.</label>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Photo</td>
+                        <td colspan="2">
+                            <input type="file" name="photo">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" align="right">
+                            <input type="button" value="Submit">
+                            <input type="button" value="Reset">
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
+        </form>
+    </body>
+</html>
