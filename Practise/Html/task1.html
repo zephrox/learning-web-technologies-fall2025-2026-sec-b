@@ -1,0 +1,357 @@
+zephrox
+.zephrox
+•
+💀 dead
+
+This is the start of the #aro-bhugi-jhugi channel. 
+zephrox — 18:08
+Part 1 – HTML Requirements
+
+Your page must include:
+
+Structure + Semantic elements
+
+<header>, <nav>, <main>, <section>, <footer>
+
+<div>, <span>, <p>, <h1>–<h6>
+
+<table>, <tr>, <th>, <td>
+
+<ol> / <ul>
+
+<img>
+
+<a> with href
+
+Form Requirements
+
+A Student Registration Form with inputs:
+
+text (name)
+
+email
+
+number (age)
+
+radio (gender)
+
+checkbox (skills)
+
+select (department)
+
+file (upload ID photo)
+
+submit, reset
+
+All inputs must use attributes: id, name, value, required
+
+Part 2 – CSS Requirements
+
+Your CSS must demonstrate:
+
+Selectors
+
+element, id, class
+
+group selector
+
+pseudo-class (:hover, :focus)
+
+pseudo-element (::first-letter, ::after)
+
+Box model
+
+margin, padding, border
+
+Display
+
+block / inline / inline-block / none
+
+Position
+
+relative
+
+absolute
+
+fixed
+
+sticky
+
+Layout
+
+header + nav bar
+
+two-column layout inside <main>
+
+footer
+
+Part 3 – JavaScript Requirements
+
+Write JS that performs all of these:
+
+DOM Manipulation
+
+When the user submits the form:
+
+Create a new <div> showing the student’s name, age, gender, and skills.
+
+Insert it into the page dynamically.
+
+If there was a previous profile with the same name, replace it.
+
+Add a “Delete” button beside each created profile (remove on click).
+
+Form Validation
+
+Check:
+
+Name must not be empty
+
+Email must contain @
+
+Age must be a number ≥ 18
+
+At least one skill must be checked
+
+Return false if invalid.
+
+Events
+
+Use event listeners such as:
+
+click
+
+change
+
+submit
+
+Arrays + Loops
+
+Store the created students in an array.
+Use:
+
+push()
+
+pop() or splice()
+
+for loop or .forEach() to display them
+
+Conditions
+
+Use if/else or switch to show messages like:
+
+“Excellent skills!” if the user selects 3+ skills
+
+“Welcome to the department of X”
+Arko — 18:10
+<html>
+<head>
+    <title>Lab Task</title>
+</head>
+<body>
+    <form>
+Expand
+14 KB
+zephrox — 18:39
+MCQ: 2×20 = 40
+Conceptual: 1×10 = 10
+Code: 2×15 = 30
+Output tracing: 2×10 = 20
+MCQ-60 , Code-20, Output-10, fill in the gap-10
+Arko — 20:10
+@zephrox done mamo
+parchi
+zephrox — 22:13
+gpt
+Attachment file type: acrobat
+Wt Js Deep Dive.pdf
+66.17 KB
+Attachment file type: acrobat
+Wt Css Deep Dive.pdf
+60.01 KB
+Attachment file type: acrobat
+Wt Html Deep Dive.pdf
+54.65 KB
+Attachment file type: acrobat
+Wt Theory Deep Dive.pdf
+45.14 KB
+Arko — 23:42
+HTML
+Attachment file type: acrobat
+Lt-1.pdf
+59.81 KB
+Attachment file type: acrobat
+Lt-2.pdf
+67.92 KB
+Attachment file type: acrobat
+Lt-3.pdf
+73.86 KB
+Attachment file type: acrobat
+Lt-4.pdf
+85.07 KB
+Attachment file type: acrobat
+Lt-5.pdf
+88.36 KB
+CSS
+Attachment file type: acrobat
+Lt-1.pdf
+66.74 KB
+Attachment file type: acrobat
+Lt-2.pdf
+16.52 KB
+Attachment file type: acrobat
+Lt-3.pdf
+9.14 KB
+Attachment file type: acrobat
+Lt-4.pdf
+106.85 KB
+Attachment file type: acrobat
+Lt-5.pdf
+62.43 KB
+Attachment file type: acrobat
+Lt-6.pdf
+63.46 KB
+Attachment file type: acrobat
+Lt-7.pdf
+56.30 KB
+Attachment file type: acrobat
+Lt-8.pdf
+61.55 KB
+Attachment file type: acrobat
+Lt-9.pdf
+58.14 KB
+Attachment file type: acrobat
+Lt-10.pdf
+57.87 KB
+JS
+Attachment file type: acrobat
+Lt-1.pdf
+73.48 KB
+Attachment file type: acrobat
+Lt-2.pdf
+63.73 KB
+Attachment file type: acrobat
+Lt-3.pdf
+64.42 KB
+Attachment file type: acrobat
+Lt-4.pdf
+62.27 KB
+Attachment file type: acrobat
+Lt-5.pdf
+83.38 KB
+Attachment file type: acrobat
+Lt-6.pdf
+64.63 KB
+Attachment file type: acrobat
+Lt-7.pdf
+62.37 KB
+Attachment file type: acrobat
+Lt-8.pdf
+64.22 KB
+Attachment file type: acrobat
+Lt-9.pdf
+68.78 KB
+HTML 1 
+<html>
+    <head>
+        <title>Personal Portfolio Webpage</title>
+        <meta charset="UTF-8">
+        <meta name="author" content="Koushik Biswas Arko">
+        <meta name="description" content=" is a personal portfolio webpage for Koushik Biswas Arko.">
+Expand
+4 KB
+﻿
+<html>
+    <head>
+        <title>Personal Portfolio Webpage</title>
+        <meta charset="UTF-8">
+        <meta name="author" content="Koushik Biswas Arko">
+        <meta name="description" content=" is a personal portfolio webpage for Koushik Biswas Arko.">
+        <meta name="keywords" content="Portfolio, Computer Science, Data Science, Robotics, IoT, Machine Learning, Graphic Design">
+    </head>
+
+    <body>
+
+        <header align="center">
+            <h1>
+                Koushik Biswas Arko
+                <br>___
+            </h1>
+            <h2>
+                Undergraduate Student, Department of Computer Science
+                <br>American International University-Bangladesh
+            </h2>
+            <hr>
+        </header>
+
+        <nav>
+            <a href="#about">About Me</a> |
+            <a href="#education">Educational Details</a> |
+            <a href="#contact">Contact Me</a>
+        </nav>
+        
+        <br><br>
+
+        <main>
+            <h2 align="center">Welcome to My Personal Portfolio</h2>
+
+            <section id="about">
+                <h3>About Me</h3>
+                <p>I am an undergraduate student pursuing a Bachelor of Science in Computer Science and Engineering. I am involved in data science, robotics, IoT and machine learning research and have proficiency in graphic design. My focus is on developing innovative technological solutions.</p>
+            </section>
+
+            <br><br>
+
+            <section id="education">
+
+                <table border="1" width="100%" cellpadding="10" cellspacing="0">
+                    <h3>Educational Details</h3>
+                    <tr align="center">
+                        <th>Institution</th>
+                        <th>Degree</th>
+                        <th>GPA/CGPA</th>
+                    </tr>
+                    <tr>
+                        <td>Kushtia Zilla School, Kushtia</td>
+                        <td>Secondary School Certificate (SSC)</td>
+                        <td>5.00</td>
+                    </tr>
+                    <tr>
+                        <td>Notre Dame College, Dhaka</td>
+                        <td>Higher Secondary Certificate (HSC)</td>
+                        <td>5.00</td>
+                    </tr>
+                    <tr>
+                        <td>American International University-Bangladesh</td>
+                        <td>Bachelor of Science in Computer Science and Engineering</td>
+                        <td>3.81 (ongoing)</td>
+                    </tr>
+                </table>
+            </section>
+
+            <br><br>
+
+            <section id ="contact">
+                <h3>Contact Me</h3>
+                <form action="#contact" method="post">
+                    <label for="name">Name:</label><br>
+                    <input type="text" id="name" name="name" required><br><br>
+                    <label for="email">Email:</label><br>
+                    <input type="email" id="email" name="email" required><br><br>
+                    <label for="message">Message:</label><br>
+                    <textarea id="message" name="message" rows="4" cols="50" required></textarea><br><br>
+                    <input type="submit" value="Submit">
+                </form>
+            </section>
+        </main>
+
+        <br><br>
+        
+        <footer align="center">
+            <p>&copy; 2025 Koushik Biswas Arko. All rights reserved.</p>
+        </footer>
+    </body>
+    
+</html>
+Lt-1.html
+4 KB

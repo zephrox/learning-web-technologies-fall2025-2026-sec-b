@@ -1,0 +1,84 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University Admission Form</title>
+</head>
+<body>
+    <form action="/submit_admission" method ="post">
+        <h2>University Admission</h2>
+        
+        <fieldset>
+            <legend>Personal Info</legend>
+            <lebel>Name:</lebel>
+            <input id="name" type="text" required>
+            <br><br>
+            <lebel>Email:</lebel>
+            <input id="email" type="email" required>
+            <br><br>
+            <lebel>Phone:</lebel>
+            <input id="phonr" type="tel" required maxlength="11">
+            <br><br>
+            <lebel>Date:</lebel>
+            <input id="date" type="date" required>
+            <br><br>
+            <label>Gender</label>
+            <input name="Gender" type="radio" option="Male" required >Male
+            <input name="Gender" type="radio" option="Female"required >Female
+            <input name="Gender" type="radio" option="Other"required >other
+            <br><br>
+
+            <lebel>Interests</lebel>
+            <br>
+            <input id="Interests" type="checkbox" value="Nothing">Nothing
+            <input id="Interests" type="checkbox" value="sports">Sports
+            <input id="Interests" type="checkbox" value="Games">Games<br>
+            <input id="Interests" type="checkbox" value="Comics">Comics
+            <input id="Interests" type="checkbox" value="Books">Books
+            <input id="Interests" type="checkbox" value="Music">Music<br>
+            <input id="Interests" type="checkbox" value="Coding">Coding
+            <input id="Interests" type="checkbox" value="Travleing">Traveling
+            <input id="Interests" type="checkbox" value="Cooking">Cooking
+            <br>
+        </fieldset>
+
+        <fieldset>
+            <legend>Academic Info</legend>
+            <lebel>SSC:</lebel>
+            <input id="Institution" type="text" required>
+            <lebel>Grade:</lebel>
+            <input id="grade" type="text" required maxlength="4">
+            <br><br>
+            <lebel>HSC:</lebel>
+            <input id="Institution" type="text" required>
+            <lebel>Grade:</lebel>
+            <input id="grade" type="text" required maxlength="4">
+            <br><br>
+            <lebel>Upload Transscript</lebel>
+            <input id="Transscript" type="file" required maxisize="2MB">
+            <br><br>
+
+
+        </fieldset>
+
+        <fieldset>
+            <legend>Program Selection</legend>
+            <lebel for="Program">Select a Program:</lebel>
+            <select id="Program" name="Program" required >
+                <option value="cse">Computer Science And Engineering</option>
+                <option value="eee">Electrical and elcctronic Engineering</option>
+                <option value="bba">Bachchelor of Bussiness Administration </option>
+                <option value="llb">Law</option>
+                <option value="mba">Master of Bussiness Administration</option>
+            </select>
+            <br><br>
+            
+
+        </fieldset>
+        <br>
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset All">
+    </form>
+  
+</body>
+    
