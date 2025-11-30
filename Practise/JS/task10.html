@@ -1,0 +1,228 @@
+<html>
+<head>
+    <title>Personal Portfolio Webpage</title>
+    <meta charset="UTF-8">
+    <meta name="author" content="Anjir Jaman">
+    <meta name="description" content=" is a personal portfolio webpage for Anjir Jaman.">
+
+
+    <nav>
+        <a id="about-link" href="#about">About Me</a> |
+        <a id="project-link" href="#project">Projects</a> |
+        <a id="contact-link" href="#contact">Contact</a>
+    </nav><br>
+    
+    <button id="theme">Toggle Theme</button> 
+
+    <title>Personal Portfolio Webpage</title>
+    
+    <meta charset="UTF-8">
+    <meta name="author" content="Anjir Jaman">
+    <meta name="description" content=" is a personal portfolio webpage for Koushik Biswas Arko.">
+    <meta name="keywords" content="Portfolio, Computer Science, Data Science, Robotics, IoT, Machine Learning, Graphic Design">
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        h1 {
+            color: rgb(255, 0, 0);
+            font-size: 50px;
+        }
+
+        button {
+            cursor: pointer;
+            border: 1px solid #555;
+            text-align: center;
+            padding: 5px 10px;
+            margin-left: 8px;
+        }
+
+        nav a {
+            text-decoration: none;
+            margin: 0 5px;
+        }
+
+        table {
+            border: 1px solid rgb(255, 42, 0);
+            border-collapse: collapse;
+            width: 100%;
+            color: black;
+        }
+
+        th, td {
+            border: 1px solid rgb(255, 42, 0);
+            padding: 10px;
+        }
+
+        th {
+            text-align: center;
+        }
+
+        .dark {
+            background-color: #070707;
+            color: #e6e6e6;
+        }
+
+        .dark table {
+            border-color: cyan;
+            color: white;
+        }
+
+        .dark th, .dark td {
+            border-color: cyan;
+        }
+
+        .dark h1 {
+            color: rgb(250, 255, 98);
+        }
+    </style>
+</head>
+
+<body>
+
+    <header align="center">
+        <h1>
+            Anjir Jaman
+            <br>
+        </h1>
+        <h2>
+            Undergraduate Student, Department of Computer Science
+            <br>American International University-Bangladesh
+        </h2>
+        <hr>
+    </header>
+
+    <br><br>
+
+    <main>
+        <h2 align="center">Welcome to My Personal Portfolio</h2>
+        <p id="greeting" align="center"></p>
+        <h3 id="clock" align="center"></h3>
+
+        <section id="about">
+            <h3>About Me</h3>
+            <p>I am an undergraduate student pursuing a Bachelor of Science in Computer Science and Engineering.</p>
+        </section>
+
+        <br><br>
+
+        <section id="project">
+            <h3>Projects</h3>
+            <ul>
+                <li>Project 1: Personal Portfolio Website - A responsive website showcasing my skills and projects.</li>
+                <li>Project 2: Data Analysis with Python - Analyzed large datasets to extract meaningful insights using Pandas and Matplotlib.</li>
+                <li>Project 3: IoT Home Automation - Developed a home automation system using Arduino and Raspberry Pi.</li>
+            </ul>
+        </section>
+
+        <br><br>
+
+        <section id="contact">
+            <h3>Contact Me</h3>
+            <form action="#contact" method="post">
+                <label for="name">Name:</label><br>
+                <input type="text" id="name" name="name" required><br><br>
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email" required><br><br>
+                <label for="message">Message:</label><br>
+                <textarea id="message" name="message" rows="4" cols="50" required></textarea><br><br>
+                <input type="submit" id="submit" value="Submit">
+            </form>
+    
+            <h3><p id="errorMessage" style="color: red;"></p></h3>
+        </section>
+    </main>
+
+    <br><br>
+    
+    <footer align="center">
+        <p>&copy; 2025 Anjir Jaman. All rights reserved.</p>
+    </footer>
+
+</body>
+
+<script>
+    const themeButton = document.getElementById('theme');
+    themeButton.addEventListener('click', toggleMode);
+
+    function toggleMode() {
+        document.body.classList.toggle('dark');
+    }
+
+    function updateGreeting() {
+        const now = new Date();
+        const hours = now.getHours();
+        let greeting;
+
+        if (hours >= 5 && hours < 12) {
+            greeting = "Good Morning!";
+        } else if (hours >= 12 && hours < 18) {
+            greeting = "Good Afternoon!";
+        } else {
+            greeting = "Good Evening!";
+        }
+
+        document.getElementById('greeting').innerHTML = greeting;
+    }
+
+    function updateClock() {
+        const now = new Date();
+        let hours = now.getHours();
+        let minutes = now.getMinutes();
+        let seconds = now.getSeconds();
+        hours = hours < 10 ? '0' + hours : hours;
+        minutes = minutes < 10 ? '0' + minutes : minutes;
+        seconds = seconds < 10 ? '0' + seconds : seconds;
+        const timeString = `${hours}:${minutes}:${seconds}`;
+        document.getElementById('clock').innerHTML = timeString;
+    }
+
+    setInterval(updateClock, 1000);
+    updateClock();
+    updateGreeting();
+
+    document.getElementById('about-link').addEventListener('click', function () {
+        document.getElementById('about').hidden = false;   
+        document.getElementById('project').hidden = true;
+        document.getElementById('contact').hidden = true;
+    });
+
+    document.getElementById('project-link').addEventListener('click', function () {
+        document.getElementById('project').hidden = false; 
+        document.getElementById('about').hidden = true;
+        document.getElementById('contact').hidden = true;
+    });
+
+    document.getElementById('contact-link').addEventListener('click', function () {
+        document.getElementById('contact').hidden = false; 
+        document.getElementById('about').hidden = true;
+        document.getElementById('project').hidden = true;
+    });
+
+    document.getElementById('submit').addEventListener('click', Error);
+
+    function Error(e) {
+        e.preventDefault(); 
+        let name = document.getElementById('name').value.trim();
+        let firstChar = name.charAt(0);
+        let message = document.getElementById('message').value.trim();
+        let errorMessage = "";
+
+        if (name === '' || !isNaN(firstChar)) {
+            errorMessage = "Please enter a valid name. ";
+        }
+
+        if (message === '' || message.length < 10) {
+            errorMessage += "Please enter a valid message. ";
+        }
+
+        
+        document.getElementById('errorMessage').innerHTML = errorMessage;
+    }
+</script>
+
+</html>
