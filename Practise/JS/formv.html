@@ -1,0 +1,179 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University Admission Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        h2 {
+            color: rgb(0, 0, 255);
+            font-size: 40px;
+            text-align: center;
+        }
+
+        .dark {
+            background-color: #070707;
+            color: #e6e6e6;
+        }
+    </style>
+</head>
+<body>
+    <!-- move button into body -->
+    <button id="theme">Toggle Theme</button>
+
+    <form action="/submit_admission" method ="post">
+        
+        <h2>University Admission</h2>
+        
+        <fieldset>
+            <legend>Personal Info</legend>
+            <label>Name:</label>
+            <input id="name" type="text" required>
+            <br><br>
+            <label>Email:</label>
+            <input id="email" type="email" required>
+            <br><br>
+            <label>Phone:</label>
+            <!-- FIX: phonr -> phone -->
+            <input id="phone" type="tel" required maxlength="11">
+            <br><br>
+            <label>Date:</label>
+            <input id="date" type="date" required>
+            <br><br>
+            <label>Gender</label>
+            <input name="Gender" type="radio" value="Male" required>Male
+            <input name="Gender" type="radio" value="Female" required>Female
+            <input name="Gender" type="radio" value="Other" required>Other
+            <br><br>
+
+            <label>Interests</label>
+            <br>
+            <input type="checkbox" value="Nothing">Nothing
+            <input type="checkbox" value="sports">Sports
+            <input type="checkbox" value="Games">Games<br>
+            <input type="checkbox" value="Comics">Comics
+            <input type="checkbox" value="Books">Books
+            <input type="checkbox" value="Music">Music<br>
+            <input type="checkbox" value="Coding">Coding
+            <input type="checkbox" value="Travelling">Traveling
+            <input type="checkbox" value="Cooking">Cooking
+            <br>
+        </fieldset>
+
+        <fieldset>
+            <legend>Academic Info</legend>
+            <label>SSC:</label>
+            <input id="Institution" type="text" required>
+            <label>Grade:</label>
+            <!-- this is the grade we will validate -->
+            <input id="grade" type="text" required maxlength="4">
+            <br><br>
+            <label>HSC:</label>
+            <input type="text" required>
+            <label>Grade:</label>
+            <input type="text" required maxlength="4">
+            <br><br>
+            <label>Upload Transcript</label>
+            <input id="Transscript" type="file" required>
+            <br><br>
+        </fieldset>
+
+        <fieldset>
+            <legend>Program Selection</legend>
+            <label for="Program">Select a Program:</label>
+            <select id="Program" name="Program" required >
+                <option value="cse">Computer Science And Engineering</option>
+                <option value="eee">Electrical and Electronic Engineering</option>
+                <option value="bba">Bachelor of Business Administration</option>
+                <option value="llb">Law</option>
+                <option value="mba">Master of Business Administration</option>
+            </select>
+            <br><br>
+        </fieldset>
+        <br>
+        <input id="submit" type="submit" value="Submit">
+        <input type="reset" value="Reset All">
+
+        <!-- NEW: place to show error messages -->
+        <h4><p id="errorMessage" style="color:red;"></p></h4>
+    </form>
+  
+
+    
+
+
+
+</body>
+
+    <script>
+    const themeButton = document.getElementById('theme');
+    themeButton.addEventListener('click', toggleMode);
+    function toggleMode() {
+        document.body.classList.toggle('dark');
+    }
+
+    document.getElementById('submit').addEventListener('click', function(e) {
+        e.preventDefault(); 
+        error(e);
+    });
+
+    function error(e){
+        
+        let name = document.getElementById('name').value.trim();
+        let firstChar = name.charAt(0);
+        let email = document.getElementById('email').value.trim();
+        let phone = document.getElementById('phone').value.trim();
+        let date = document.getElementById('date').value.trim();
+        let institution = document.getElementById('Institution').value.trim();
+        let grade = document.getElementById('grade').value.trim();
+
+        let errorMessage = "";
+
+        if (name === '') {
+            errorMessage += "Name cant be empty. ";
+        }
+        if (!isNaN(firstChar)) {
+            errorMessage += "Name cant start with a number. ";
+        }
+        if (email === '') {
+            errorMessage += "Email cant be empty. ";
+        }
+        if (email.indexOf('@') === -1 || email.indexOf('.') === -1) {
+            errorMessage += "Please enter a valid email. ";
+        }
+        if (email.indexOf('@') > email.lastIndexOf('.')) {
+            errorMessage += "Please enter a valid email. ";
+        }
+        if (phone === '' || phone.length < 11) {
+            errorMessage += "Please enter a valid phone number. ";
+        }
+        if (date === '') {
+            errorMessage += "Date cant be empty. ";
+        }
+        if (institution === '') {
+            errorMessage += "Institution cant be empty. ";
+        }
+        if (institution.length < 3) {
+            errorMessage += "Please enter a valid institution name. ";
+        }
+        if (!isNaN(institution.charAt(0))) {
+            errorMessage += "Can not start with a number. ";
+        }
+        if (grade === '' || isNaN(grade) || grade < 0 || grade > 5) {
+            errorMessage += "Please enter a valid grade. ";
+        }
+
+       document.getElementById('errorMessage').innerHTML = errorMessage;
+        
+    }
+
+   
+</script>
+
+
+
+</html>
